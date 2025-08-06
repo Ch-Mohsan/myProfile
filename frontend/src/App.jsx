@@ -99,16 +99,16 @@ function App() {
                 description: "A full-featured online store with inventory management, payment processing, and customer analytics built for a local retailer.",
                 tech: "Next.js, Stripe, MongoDB, Tailwind CSS"
               },
-              {
-                title: "Learning Management System",
-                description: "An educational platform that helps instructors create courses and track student progress with integrated video conferencing.",
-                tech: "Vue.js, Express, MySQL, WebRTC"
-              },
-              {
-                title: "Weather Analytics Tool",
-                description: "A data visualization dashboard that aggregates weather data from multiple sources and provides insights for agricultural planning.",
-                tech: "Python, Flask, D3.js, Redis"
-              }
+              // {
+              //   title: "Learning Management System",
+              //   description: "An educational platform that helps instructors create courses and track student progress with integrated video conferencing.",
+              //   tech: "Vue.js, Express, MySQL, WebRTC"
+              // },
+              // {
+              //   title: "Weather Analytics Tool",
+              //   description: "A data visualization dashboard that aggregates weather data from multiple sources and provides insights for agricultural planning.",
+              //   tech: "Python, Flask, D3.js, Redis"
+              // }
             ].map((project, index) => (
               <article key={index} className="bg-white border border-gray-200 overflow-hidden">
                 <div className="h-48 bg-gray-100 border-b border-gray-200 flex items-center justify-center text-sm text-gray-500">
@@ -143,21 +143,21 @@ function App() {
               <div className="text-gray-600 leading-relaxed space-y-1">
                 <div>JavaScript (ES6+)</div>
                 <div>React & Next.js</div>
-                <div>Vue.js & Nuxt.js</div>
-                <div>TypeScript</div>
+                {/* <div>Vue.js & Nuxt.js</div> */}
+                {/* <div>TypeScript</div> */}
                 <div>Tailwind CSS</div>
-                <div>SASS/SCSS</div>
+                {/* <div>SASS/SCSS</div> */}
               </div>
             </div>
             <div>
               <h4 className="font-semibold text-slate-700 mb-4 text-sm uppercase tracking-wide">Backend</h4>
               <div className="text-gray-600 leading-relaxed space-y-1">
                 <div>Node.js & Express</div>
-                <div>Python & Django</div>
-                <div>PHP & Laravel</div>
+                {/* <div>Python & Django</div>
+                <div>PHP & Laravel</div> */}
                 <div>PostgreSQL & MySQL</div>
                 <div>MongoDB</div>
-                <div>Redis</div>
+                {/* <div>Redis</div> */}
               </div>
             </div>
             <div>
@@ -178,7 +178,7 @@ function App() {
       {/* Blog Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
-          <h3 className="text-3xl font-semibold text-gray-900 mb-12">Recent Writing</h3>
+          <h3 className="text-3xl font-semibold text-gray-900 mb-12">Currently Working</h3>
           <div className="space-y-8">
             {[
               {
@@ -191,11 +191,11 @@ function App() {
                 date: "February 28, 2024", 
                 excerpt: "How to give and receive feedback that improves code quality while maintaining team morale. Lessons learned from five years of remote collaboration."
               },
-              {
-                title: "Database Indexing Strategies",
-                date: "January 12, 2024",
-                excerpt: "Understanding when and how to use database indexes effectively. Real-world examples of query optimization that improved performance by 300%."
-              }
+              // {
+              //   title: "Database Indexing Strategies",
+              //   date: "January 12, 2024",
+              //   excerpt: "Understanding when and how to use database indexes effectively. Real-world examples of query optimization that improved performance by 300%."
+              // }
             ].map((post, index) => (
               <article key={index} className="py-6 border-b border-gray-200 last:border-b-0">
                 <h4 className="text-2xl font-semibold text-gray-900 mb-2">
