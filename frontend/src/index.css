@@ -1,0 +1,32 @@
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'IBM Plex Serif';
+  src: url('/fonts/IBM_Plex_Serif/IBMPlexSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'heading-font';
+  src: url('\public\IBM_Plex_Serif\IBMPlexSerif-Medium.ttf') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'new';
+  src: url('/fonts/IBM_Plex_Serif/IBMPlexSerif-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+}
+.heading-font{
+    font-family: 'new';
+}
+body{
+    font-family: 'IBM Plex Serif';
+}
+
+
