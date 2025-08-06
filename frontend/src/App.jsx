@@ -164,10 +164,10 @@ function App() {
               <h4 className="font-semibold text-slate-700 mb-4 text-sm uppercase tracking-wide">Tools</h4>
               <div className="text-gray-600 leading-relaxed space-y-1">
                 <div>Git & GitHub</div>
-                <div>Docker</div>
-                <div>AWS & Vercel</div>
+                <div>& Vercel</div>
+                {/* <div>Docker</div> */}
                 <div>Figma</div>
-                <div>Jest & Cypress</div>
+                {/* <div>Jest & Cypress</div> */}
                 <div>Webpack & Vite</div>
               </div>
             </div>
