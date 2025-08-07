@@ -179,7 +179,7 @@ function App() {
                 {/* <div>Docker</div> */}
                 <div>Figma</div>
                 {/* <div>Jest & Cypress</div> */}
-                <div>Webpack & Vite</div>
+                <div>Vite</div>
               </div>
             </div>
           </div>
@@ -193,14 +193,14 @@ function App() {
           <div className="space-y-8">
             {[
               {
-                title: "Building Accessible Forms in React",
-                date: "March 15, 2024",
-                excerpt: "A comprehensive guide to creating forms that work for everyone, covering semantic HTML, ARIA attributes, and testing strategies for screen readers."
+                title: "Call Agent",
+                date: "july, 31, 2025",
+                excerpt: "This is AI cll Agent here you can add bulk of contacts wapi.ai create calls to you customers and  marketing of you products    ."
               },
               {
-                title: "The Art of Code Reviews",
-                date: "February 28, 2024", 
-                excerpt: "How to give and receive feedback that improves code quality while maintaining team morale. Lessons learned from five years of remote collaboration."
+                title: "Booking Management Stytem ",
+                date: "july 15, 2025", 
+                excerpt: "In this we can handel accounts of three different users Admin Station Manager and Passenger."
               },
               // {
               //   title: "Database Indexing Strategies",
