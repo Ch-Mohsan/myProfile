@@ -1,9 +1,9 @@
 export const projects = [
   {
-    slug: 'task-management-dashboard',
-    title: 'Task Management Dashboard',
+    slug: 'Notes-management-dashboard',
+    title: 'Notes Management Dashboard',
     description:
-      'A clean, intuitive dashboard for managing team projects with real-time collaboration features and automated workflow tracking.',
+      'A full-featured dashboard for managing notes, tasks, and timelines built for a local retailer.',
     tech: 'React, Node.js, MongoDb',
     cover: '/images/notes.png',
     liveUrl: 'https://i-note-book-mohsan.vercel.app/',
@@ -16,22 +16,22 @@ export const projects = [
           'High-level view of projects, tasks, and timelines. Clear navigation with quick access to recent activity and priority work streams for maximum productivity.',
       },
       {
-        title: 'Task Boards',
-        image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop',
+        title: 'Add Notees',
+        image: '/images/note2.png',
         description:
-          'Kanban-style boards with drag-and-drop, labels, and due dates. Team members can collaborate in real time with updates synced instantly.',
+          'Here you can add notes to your notes. You can add title, description, and tags to your notes. You can also add notes to other notes.',
       },
       {
-        title: 'Team Collaboration',
-        image: 'https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2?q=80&w=1600&auto=format&fit=crop',
+        title: 'Manage Notes',
+        image: '/images/note3.png',
         description:
-          'Comment threads, mentions, and status updates reduce context switching. Shared documents and attachments keep information centralized.',
+          'You can edit and delete your notes. You can also add comments to your notes. You can also add comments to other notes.',
       },
       {
-        title: 'Reports & Insights',
-        image: 'https://images.unsplash.com/photo-1551281044-8b39e76d56f5?q=80&w=1600&auto=format&fit=crop',
+        title: 'You can Contact Us',
+        image: '/images/note4.png',
         description:
-          'Visual reports for velocity, blockers, and delivery timelines. Exportable summaries help stakeholders stay informed and aligned.',
+          'You can contact us. You can also add notes to your notes. You can also add notes to other notes.',
       },
     ],
   },
@@ -53,23 +53,25 @@ export const projects = [
           'Beautiful product listings with responsive cards, filters, and search. Optimized for fast browsing and mobile-first experiences.',
       },
       {
-        title: 'Product Details',
-        image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600&auto=format&fit=crop',
+        title: 'Collection Pages',
+        image: '/images/collections.png',
         description:
-          'High-resolution images, variants, and reviews. Clear CTAs guide users through selection, customization, and checkout.',
+          'Collection pages with product cards, filters, and sorting options. Easy navigation and filtering for a seamless shopping experience.',
       },
       {
+        title: 'Product Details',
+        image: '/images/products.png',
+        description:
+          'High-resolution images,  Clear CTAs guide users through selection, customization, and checkout.',
+      },
+
+      {
         title: 'Cart & Checkout',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1600&auto=format&fit=crop',
+        image:'/images/checkout.png',
         description:
           'Seamless cart flow with Stripe integration, validation, and order confirmation. Minimizes friction to improve conversion rates.',
       },
-      {
-        title: 'Admin & Inventory',
-        image: 'https://images.unsplash.com/photo-1551281044-8b39e76d56f5?q=80&w=1600&auto=format&fit=crop',
-        description:
-          'Admin dashboard for stock levels, order management, and analytics. Exportable reports support operational decision-making.',
-      },
+      
     ],
   },
   {
@@ -84,25 +86,25 @@ export const projects = [
     sections: [
       {
         title: 'Feed & Posts',
-        image: '/images/linkup.jpeg',
+        image: '/images/linkup4.png',
         description:
           'Personalized feed with rich media posts and interactions. Infinite scroll and quick actions make engagement effortless.',
       },
       {
         title: 'Messaging',
-        image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop',
+        image: '/images/linkup1.png',
         description:
           'Real-time chat with presence indicators, read receipts, and media sharing powered by websockets.',
       },
       {
         title: 'Profiles & Following',
-        image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1600&auto=format&fit=crop',
+        image: '/images/linkup5.png',
         description:
           'Rich profiles with bios and follower graphs. Privacy controls let users choose what to share and with whom.',
       },
       {
         title: 'Notifications',
-        image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop',
+        image: '/images/linkup3.png',
         description:
           'Timely alerts for likes, comments, and follows keep users informed without overwhelming them.',
       },
