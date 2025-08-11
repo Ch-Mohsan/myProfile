@@ -1,9 +1,16 @@
-import React from 'react';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 
 function Layout() {
   const baseLinkClass = 'text-gray-700 hover:text-gray-900 transition-colors';
   const activeLinkClass = 'text-gray-900 border-b-2 border-gray-900 pb-1';
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Close mobile menu on route change
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-white font-medium">
@@ -33,8 +40,30 @@ function Layout() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
+            <button
+              aria-label="Toggle menu"
+              className="md:hidden p-2 rounded hover:bg-gray-100"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            >
+              <span className="block w-5 h-0.5 bg-gray-800 mb-1"></span>
+              <span className="block w-5 h-0.5 bg-gray-800 mb-1"></span>
+              <span className="block w-5 h-0.5 bg-gray-800"></span>
+            </button>
           </div>
         </div>
+        {isMobileMenuOpen && (
+          <nav className="md:hidden mt-3 pt-3 border-t border-gray-200 flex flex-col gap-3">
+            <NavLink to="/" end onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Home</NavLink>
+            <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>About</NavLink>
+            <NavLink to="/projects" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Projects</NavLink>
+            <NavLink to="/skills" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Skills</NavLink>
+            <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Contact</NavLink>
+            <div className="flex items-center gap-3 pt-1">
+              <a target='_blank' href="https://github.com/Ch-Mohsan" className="text-gray-600 hover:text-gray-900 transition-colors" rel="noreferrer">GitHub</a>
+              <a target='_blank' href="https://www.linkedin.com/in/mohsan-zafar-21169136b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-gray-600 hover:text-gray-900 transition-colors" rel="noreferrer">LinkedIn</a>
+            </div>
+          </nav>
+        )}
       </header>
 
       <Outlet />
