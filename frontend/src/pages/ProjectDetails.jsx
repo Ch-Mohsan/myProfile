@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { projects } from '../data/projects.js';
+import MockupFrame from '../components/MockupFrame.jsx';
 
 function ProjectDetails() {
   const { slug } = useParams();
@@ -34,24 +35,22 @@ function ProjectDetails() {
     setCurrentIndex((index + total) % total);
   };
 
+  const variantForIndex = (i) => (i % 3 === 0 ? 'browser' : i % 3 === 1 ? 'laptop' : 'phone');
+
   return (
     <main className="container mx-auto px-6 py-16">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-8 text-center">{project.title}</h1>
 
         {/* Carousel */}
-        <div className="relative mb-12 rounded-md shadow-md overflow-hidden">
+        <div className="relative mb-12 rounded-md overflow-visible">
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {project.sections.map((section, idx) => (
-              <div className="min-w-full" key={section.title + idx}>
-                <img
-                  src={section.image}
-                  alt={section.title}
-                  className="w-full h-72 sm:h-80 md:h-96 object-cover"
-                />
+              <div className="min-w-full px-2 sm:px-4" key={section.title + idx}>
+                <MockupFrame variant={variantForIndex(idx)} src={section.image} alt={section.title} />
               </div>
             ))}
           </div>
@@ -60,26 +59,26 @@ function ProjectDetails() {
           <button
             aria-label="Previous slide"
             onClick={() => goTo(currentIndex - 1)}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full z-10"
+            className="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full z-10 shadow"
           >
             <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
           </button>
           <button
             aria-label="Next slide"
             onClick={() => goTo(currentIndex + 1)}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/70 hover:bg-white/90 p-2 rounded-full z-10"
+            className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full z-10 shadow"
           >
             <svg className="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path></svg>
           </button>
 
           {/* Dots */}
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {project.sections.map((_, i) => (
               <button
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => goTo(i)}
-                className={`w-3 h-3 rounded-full ${i === currentIndex ? 'bg-white' : 'bg-white/60'} hover:bg-white`}
+                className={`w-2.5 h-2.5 rounded-full ${i === currentIndex ? 'bg-gray-800' : 'bg-gray-400'} hover:bg-gray-700`}
               />
             ))}
           </div>
@@ -91,11 +90,11 @@ function ProjectDetails() {
         </div>
 
         {/* Sections with descriptions */}
-        <section className="mt-12 space-y-10">
+        <section className="mt-12 space-y-12">
           {project.sections.map((section, idx) => (
             <article key={section.title + idx} className="grid md:grid-cols-2 gap-6 md:gap-8 items-start">
-              <div className="rounded-md overflow-hidden shadow-sm border border-gray-100">
-                <img src={section.image} alt={section.title} className="w-full h-56 sm:h-64 object-cover" />
+              <div>
+                <MockupFrame variant={variantForIndex(idx + 1)} src={section.image} alt={section.title} />
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">{section.title}</h3>
