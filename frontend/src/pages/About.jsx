@@ -6,7 +6,7 @@ function About() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-[200px_1fr] gap-12 items-start">
           <div className="w-48 h-64 bg-gray-200 border border-gray-300 flex items-center justify-center text-sm text-gray-500">
-            <img src="/mockups/me.jpg" alt="Profile" />
+            <img src="/mockups/me.jpg" alt="Profile portrait" />
           </div>
           <div>
             <h3 className="text-3xl font-semibold text-gray-900 mb-6">Hello there.</h3>
@@ -25,6 +25,67 @@ function About() {
                 When I'm not coding, you'll find me reading about new technologies, experimenting with 
                 design patterns, or enjoying a good cup of tea while contemplating the next problem to solve.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Experience</h3>
+          <article className="bg-gray-50 border border-gray-200 p-6 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+              <div>
+                <h4 className="text-xl font-semibold text-gray-900">Think Code IT Solution</h4>
+                <p className="text-sm text-gray-500">Full‑stack Developer • 6 months</p>
+              </div>
+              <div className="text-sm text-gray-600 font-mono">2024 — 2025</div>
+            </div>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Partnered with a small, fast-moving team to design and ship production-ready features end‑to‑end. Focused on
+              accessible UI, clean APIs, and maintainable code that aligns with a classical, content‑first product aesthetic.
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li>Built responsive React interfaces with Tailwind CSS aligned to an existing design system.</li>
+              <li>Developed REST endpoints in Node.js/Express with input validation and clear error surfaces.</li>
+              <li>Integrated PostgreSQL/MongoDB data layers with pragmatic indexing and query optimization.</li>
+              <li>Improved page performance via image sizing, route‑level code splitting, and memoization.</li>
+            </ul>
+            <div className="mt-4 text-sm text-gray-600 font-mono">
+              React • Node.js • Express • PostgreSQL • MongoDB • Tailwind CSS
+            </div>
+          </article>
+        </div>
+
+        {/* Principles */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Principles I work by</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="border border-gray-200 p-6 bg-white">
+              <h4 className="font-semibold text-slate-700 mb-2">Clarity first</h4>
+              <p className="text-gray-700 leading-relaxed">Interfaces should feel quiet, legible, and purposeful—no visual noise.</p>
+            </div>
+            <div className="border border-gray-200 p-6 bg-white">
+              <h4 className="font-semibold text-slate-700 mb-2">Simplicity scales</h4>
+              <p className="text-gray-700 leading-relaxed">Prefer straightforward solutions that are easy to extend and maintain.</p>
+            </div>
+            <div className="border border-gray-200 p-6 bg-white">
+              <h4 className="font-semibold text-slate-700 mb-2">Accessibility by default</h4>
+              <p className="text-gray-700 leading-relaxed">Semantic HTML, keyboard support, and readable contrast on every screen.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Highlights */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Highlights</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border border-gray-200 p-6 bg-white">
+              <h4 className="font-semibold text-slate-700 mb-2">What I enjoy</h4>
+              <p className="text-gray-700 leading-relaxed">Design‑system thinking, performance budgets, and crafting tiny details that add polish.</p>
+            </div>
+            <div className="border border-gray-200 p-6 bg-white">
+              <h4 className="font-semibold text-slate-700 mb-2">Currently exploring</h4>
+              <p className="text-gray-700 leading-relaxed">Server components, edge‑rendered patterns, and AI‑assisted developer tools.</p>
             </div>
           </div>
         </div>
