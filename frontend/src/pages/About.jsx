@@ -1,6 +1,36 @@
 import React from 'react';
 
 function About() {
+  const principles = [
+    {
+      title: 'Clarity first',
+      description:
+        'Interfaces should feel quiet, legible, and purposeful—no visual noise.',
+    },
+    {
+      title: 'Simplicity scales',
+      description:
+        'Prefer straightforward solutions that are easy to extend and maintain.',
+    },
+    {
+      title: 'Accessibility by default',
+      description:
+        'Semantic HTML, keyboard support, and readable contrast on every screen.',
+    },
+  ];
+
+  const highlights = [
+    {
+      title: 'What I enjoy',
+      description:
+        'Design‑system thinking, performance budgets, and crafting tiny details that add polish.',
+    },
+    {
+      title: 'Currently exploring',
+      description:
+        'Server components, edge‑rendered patterns, and AI‑assisted developer tools.',
+    },
+  ];
   return (
     <section className="py-20">
       <div className="max-w-4xl mx-auto px-6">
@@ -57,38 +87,35 @@ function About() {
         </div>
 
         {/* Principles */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Principles I work by</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border border-gray-200 p-6 bg-white">
-              <h4 className="font-semibold text-slate-700 mb-2">Clarity first</h4>
-              <p className="text-gray-700 leading-relaxed">Interfaces should feel quiet, legible, and purposeful—no visual noise.</p>
-            </div>
-            <div className="border border-gray-200 p-6 bg-white">
-              <h4 className="font-semibold text-slate-700 mb-2">Simplicity scales</h4>
-              <p className="text-gray-700 leading-relaxed">Prefer straightforward solutions that are easy to extend and maintain.</p>
-            </div>
-            <div className="border border-gray-200 p-6 bg-white">
-              <h4 className="font-semibold text-slate-700 mb-2">Accessibility by default</h4>
-              <p className="text-gray-700 leading-relaxed">Semantic HTML, keyboard support, and readable contrast on every screen.</p>
-            </div>
-          </div>
-        </div>
+        <section aria-labelledby="principles-heading" className="mt-16">
+          <h3 id="principles-heading" className="text-2xl font-semibold text-gray-900 mb-6">Principles I work by</h3>
+          <ul role="list" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {principles.map((item, index) => (
+              <li key={item.title} className="group relative">
+                <div className="h-full bg-white border border-gray-200 p-6">
+                  <div className="text-gray-500 text-xs tracking-widest mb-2">{String(index + 1).padStart(2, '0')}</div>
+                  <h4 className="font-semibold text-slate-700 mb-2">{item.title}</h4>
+                  <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Highlights */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6">Highlights</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-gray-200 p-6 bg-white">
-              <h4 className="font-semibold text-slate-700 mb-2">What I enjoy</h4>
-              <p className="text-gray-700 leading-relaxed">Design‑system thinking, performance budgets, and crafting tiny details that add polish.</p>
-            </div>
-            <div className="border border-gray-200 p-6 bg-white">
-              <h4 className="font-semibold text-slate-700 mb-2">Currently exploring</h4>
-              <p className="text-gray-700 leading-relaxed">Server components, edge‑rendered patterns, and AI‑assisted developer tools.</p>
-            </div>
-          </div>
-        </div>
+        <section aria-labelledby="highlights-heading" className="mt-16">
+          <h3 id="highlights-heading" className="text-2xl font-semibold text-gray-900 mb-6">Highlights</h3>
+          <ul role="list" className="grid gap-6 md:grid-cols-2">
+            {highlights.map((item) => (
+              <li key={item.title} className="relative">
+                <div className="h-full bg-white border border-gray-200 p-6">
+                  <h4 className="font-semibold text-slate-700 mb-2">{item.title}</h4>
+                  <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
     </section>
   );
