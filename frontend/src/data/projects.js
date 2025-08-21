@@ -80,7 +80,7 @@ export const projects = [
     description:
       'Share posts, follow connections, chat in real time, and control visibility with public or private settings.',
     tech: 'React, Tailwindcss, Nodjs, Soket.io, MongoBd',
-    cover: '/images/linkup.jpeg',
+    cover: '/mockups/linkup1.png',
     liveUrl: 'https://page-link-up.vercel.app/',
     repoUrl: 'https://github.com/Ch-Mohsan/page-linkUp',
     sections: [

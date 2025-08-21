@@ -6,7 +6,7 @@ function About() {
       <div className="max-w-4xl mx-auto px-6">
         <div className="grid md:grid-cols-[200px_1fr] gap-12 items-start">
           <div className="w-48 h-64 bg-gray-200 border border-gray-300 flex items-center justify-center text-sm text-gray-500">
-            <img src="/images/me.jpg" alt="Profile" />
+            <img src="/mockups/me.jpg" alt="Profile" />
           </div>
           <div>
             <h3 className="text-3xl font-semibold text-gray-900 mb-6">Hello there.</h3>
