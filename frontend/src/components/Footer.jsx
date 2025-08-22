@@ -1,3 +1,4 @@
+// ...existing code...
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import Footer from './Footer';
@@ -6,29 +7,49 @@ function Layout() {
   const baseLinkClass = 'text-gray-700 hover:text-gray-900 transition-colors';
   const activeLinkClass = 'text-gray-900 border-b-2 border-gray-900 pb-1';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState({});
   const location = useLocation();
+  const ownerName = 'Mohsan ALi';
 
   useEffect(() => {
     // Close mobile menu on route change
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    // Try to import theme from data/projects.js (if it exists)
+    import('../data/projects')
+      .then((mod) => {
+        const t = mod.theme || mod.default?.theme || {};
+        setTheme(t);
+      })
+      .catch(() => {
+        // ignore if file missing
+      });
+  }, []);
+
+  const renderNav = (to, label, end = false) => (
+    <NavLink to={to} end={end} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+      {({ isActive }) => <span>{isActive ? `${label} • ${ownerName}` : label}</span>}
+    </NavLink>
+  );
+
   return (
-    <div className="min-h-screen bg-white font-medium">
+    <div className="min-h-screen bg-white font-medium" style={{ backgroundColor: theme.pageBg }}>
       <header className="border-b border-gray-200 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
               <span className="text-white font-bold text-sm">M</span>
             </div>
-            <h1 className="text-xl font-semibold text-gray-900">Mohsan ALi</h1>
+            <h1 className="text-xl font-semibold text-gray-900">{ownerName}</h1>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
-            <NavLink to="/" end className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Home</NavLink>
-            <NavLink to="/about" className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>About</NavLink>
-            <NavLink to="/projects" className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Projects</NavLink>
-            <NavLink to="/skills" className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Skills</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Contact</NavLink>
+            {renderNav('/', 'Home', true)}
+            {renderNav('/about', 'About')}
+            {renderNav('/projects', 'Projects')}
+            {renderNav('/skills', 'Skills')}
+            {renderNav('/contact', 'Contact')}
           </nav>
           <div className="flex items-center gap-3">
             <a target='_blank' href="https://github.com/Ch-Mohsan" className="text-gray-600 hover:text-gray-900 transition-colors" rel="noreferrer">
@@ -54,11 +75,21 @@ function Layout() {
         </div>
         {isMobileMenuOpen && (
           <nav className="md:hidden mt-3 pt-3 border-t border-gray-200 flex flex-col gap-3">
-            <NavLink to="/" end onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Home</NavLink>
-            <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>About</NavLink>
-            <NavLink to="/projects" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Projects</NavLink>
-            <NavLink to="/skills" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Skills</NavLink>
-            <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>Contact</NavLink>
+            <NavLink to="/" end onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+              {({ isActive }) => <span>{isActive ? `Home • ${ownerName}` : 'Home'}</span>}
+            </NavLink>
+            <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+              {({ isActive }) => <span>{isActive ? `About • ${ownerName}` : 'About'}</span>}
+            </NavLink>
+            <NavLink to="/projects" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+              {({ isActive }) => <span>{isActive ? `Projects • ${ownerName}` : 'Projects'}</span>}
+            </NavLink>
+            <NavLink to="/skills" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+              {({ isActive }) => <span>{isActive ? `Skills • ${ownerName}` : 'Skills'}</span>}
+            </NavLink>
+            <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => (isActive ? `${baseLinkClass} ${activeLinkClass}` : baseLinkClass)}>
+              {({ isActive }) => <span>{isActive ? `Contact • ${ownerName}` : 'Contact'}</span>}
+            </NavLink>
             <div className="flex items-center gap-3 pt-1">
               <a target='_blank' href="https://github.com/Ch-Mohsan" className="text-gray-600 hover:text-gray-900 transition-colors" rel="noreferrer">GitHub</a>
               <a target='_blank' href="https://www.linkedin.com/in/mohsan-zafar-21169136b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-gray-600 hover:text-gray-900 transition-colors" rel="noreferrer">LinkedIn</a>
@@ -68,15 +99,11 @@ function Layout() {
       </header>
 
       <Outlet />
-      <Footer/>
+      <Footer theme={theme} />
 
-      {/* <footer className="py-12 border-t border-gray-200 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6">
-          <p className="text-center text-sm text-gray-500">Designed and coded by Mohsan</p>
-        </div>
-      </footer> */}
     </div>
   );
 }
 
 export default Layout;
+// ...existing code...

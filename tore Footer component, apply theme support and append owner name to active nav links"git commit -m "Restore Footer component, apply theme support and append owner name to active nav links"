@@ -1,0 +1,27 @@
+[1mdiff --git a/frontend/src/components/Layout.jsx b/frontend/src/components/Layout.jsx[m
+[1mindex dea813f..105610f 100644[m
+[1m--- a/frontend/src/components/Layout.jsx[m
+[1m+++ b/frontend/src/components/Layout.jsx[m
+[36m@@ -1,5 +1,6 @@[m
+ import React, { useEffect, useState } from 'react';[m
+ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';[m
+[32m+[m[32mimport Footer from './Footer';[m
+ [m
+ function Layout() {[m
+   const baseLinkClass = 'text-gray-700 hover:text-gray-900 transition-colors';[m
+[36m@@ -67,12 +68,13 @@[m [mfunction Layout() {[m
+       </header>[m
+ [m
+       <Outlet />[m
+[32m+[m[32m      <Footer/>[m
+ [m
+[31m-      <footer className="py-12 border-t border-gray-200 bg-gray-50">[m
+[32m+[m[32m      {/* <footer className="py-12 border-t border-gray-200 bg-gray-50">[m
+         <div className="max-w-4xl mx-auto px-6">[m
+           <p className="text-center text-sm text-gray-500">Designed and coded by Mohsan</p>[m
+         </div>[m
+[31m-      </footer>[m
+[32m+[m[32m      </footer> */}[m
+     </div>[m
+   );[m
+ }[m
